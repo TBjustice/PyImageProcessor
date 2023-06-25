@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ul Element</title>
+</head>
+<body>
+    <h1>ul Element</h1>
+    <main>
+        <div>
+            Open
+            <button onclick="onSelectTiff()">Open File</button>
+            <button onclick="onSelectFolder()">Open Folder</button>
+        </div>
+        <ul id="images">
+
+        </ul>
+    </main>
+
+    <script>
+        async function updateList(files){
+            if(files == null)return;
+            let text = "";
+            for(const file of files){
+                text += "<li>" + file + "</li>";
+            }
+            document.getElementById("images").innerHTML = text;
+        }
+        async function onSelectTiff(){
+            let res = await pywebview.api.selectTiff();
+            updateList(res);
+        }
+        async function onSelectFolder(){
+            let res = await pywebview.api.selectFolder();
+            updateList(res);
+        }
+    </script>
+</body>
+</html>

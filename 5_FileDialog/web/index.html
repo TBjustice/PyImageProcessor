@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Dialog</title>
+</head>
+<body>
+    <h1>File Dialog</h1>
+    <main>
+        <div>
+            Open
+            <button onclick="onSelectTiff()">Open Files</button>
+            <button onclick="onSelectFolder()">Open Folder</button>
+        </div>
+        <div>
+            Save
+            <button onclick="onSaveText()">Save File</button>
+        </div>
+    </main>
+
+    <script>
+        async function onSelectTiff(){
+            let res = await pywebview.api.selectTiff();
+            console.log(res);
+        }
+        async function onSelectFolder(){
+            let res = await pywebview.api.selectFolder();
+            console.log(res);
+        }
+        async function onSaveText(){
+            await pywebview.api.saveText("Hello World");
+        }
+    </script>
+</body>
+</html>

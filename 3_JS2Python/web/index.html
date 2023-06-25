@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS to Python</title>
+</head>
+<body>
+    <h1>JS to Python</h1>
+    <main>
+        <button onclick="onClickOk()">OK</button>
+    </main>
+
+    <script>
+        async function onClickOk(){
+            let res = await pywebview.api.add(10, 15);
+            console.log(res);
+        }
+    </script>
+</body>
+</html>
