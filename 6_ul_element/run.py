@@ -14,5 +14,5 @@ class Api:
             return None
 
 api=Api()
-window = webview.create_window("My First App", url="web\\index.html", js_api=api)
+window = webview.create_window("ul Element", url="web\\index.html", js_api=api)
 webview.start(http_server=True, debug=True)
