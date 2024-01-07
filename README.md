@@ -1,4 +1,5 @@
-# Develop GUI App with Python
+# GUI App with Python
+## Description
 Sample codes of GUI application written in python
 
 ## Article
